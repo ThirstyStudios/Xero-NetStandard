@@ -62,8 +62,13 @@ namespace Xero.NetStandard.OAuth2.Model.Accounting
         /// Enum INVOICED for value: INVOICED
         /// </summary>
         [EnumMember(Value = "INVOICED")]
-        INVOICED = 5
+        INVOICED = 5,
 
+        /// <summary>
+        /// Enum DELETED for value: DELETED
+        /// </summary>
+        [EnumMember(Value = "DELETED")]
+        DELETED = 6
     }
 
 }
