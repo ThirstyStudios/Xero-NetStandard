@@ -10,10 +10,13 @@ namespace Xero.NetStandard.OAuth2.Client
     {
         XeroConfiguration xeroConfiguration { get; set; }
         string BuildLoginUri();
+        string BuildLoginUriPkce(string codeVerifier);
         Task<IXeroToken> RequestAccessTokenAsync(string code);
+        Task<IXeroToken> RequestAccessTokenPkceAsync(string code, string codeVerifier);
         Task<IXeroToken> RefreshAccessTokenAsync(IXeroToken xeroToken);
         Task<IXeroToken> RequestXeroTokenAsync(string code);
         Task<IXeroToken> GetCurrentValidTokenAsync(IXeroToken xeroToken);
         Task<List<Tenant>> GetConnectionsAsync(IXeroToken xeroToken);
+        Task DeleteConnectionAsync(IXeroToken xeroToken, Tenant xeroTenant);
     }
 }
