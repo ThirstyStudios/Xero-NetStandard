@@ -2,7 +2,7 @@
 
 This code is generated from the openapi-generator based on [Xero OpenAPI 3.0 Specification](https://github.com/XeroAPI/Xero-OpenAPI)
 
-[![NuGet.org](https://img.shields.io/badge/NuGet.org-Xero.NetStandard.OAuth2.v3.1.0-brightgreen?style=plastic&logo=appveyor)](https://www.nuget.org/packages/Xero.NetStandard.OAuth2/)
+[![NuGet.org](https://img.shields.io/badge/NuGet.org-Xero.NetStandard.OAuth2-brightgreen?style=plastic&logo=appveyor)](https://www.nuget.org/packages/Xero.NetStandard.OAuth2/)
 
 # Current release of SDK with OAuth2 support
 Version Xero-NetStandard SDK only supports OAuth2 authentication and the following API sets.
@@ -10,11 +10,13 @@ Version Xero-NetStandard SDK only supports OAuth2 authentication and the followi
 * fixed asset
 * identity
 * payroll AU
+* payroll UK
+* projects
 
 Coming soon
 * bank feeds
-* projects
-* payroll UK
+
+Pending OpenAPI spec release
 * payroll NZ
 * files
 * xero hq
@@ -22,7 +24,7 @@ Coming soon
 ## How to handle OAuth 2.0 authentication & authorization?
 We have built Xero OAuth 2.0 Client. Check out [Xero.NetStandard.OAuth2Client](https://github.com/XeroAPI/Xero-NetStandard/tree/oauth2/Xero.NetStandard.OAuth2Client)
 
-[![NuGet.org](https://img.shields.io/badge/NuGet.org-Xero.NetStandard.OAuth2Client.v0.0.6-brightgreen?style=plastic&logo=appveyor)](https://www.nuget.org/packages/Xero.NetStandard.OAuth2Client/)
+[![NuGet.org](https://img.shields.io/badge/NuGet.org-Xero.NetStandard.OAuth2Client.v1.1.0-brightgreen?style=plastic&logo=appveyor)](https://www.nuget.org/packages/Xero.NetStandard.OAuth2Client/)
 
 To learn more about how our OAuth 2.0 flow works and how to use the OAuth 2.0 client, check out our Xero developer blog post: [Up and running with .NET and Xero OAuth 2.0](https://devblog.xero.com/getting-started-with-net-xero-oauth2-0-763ba468a916)
 
@@ -72,6 +74,7 @@ To get started you will just need two things to make calls to the Accounting Api
 * xero-tenant-id
 * accessToken
 
+** Note: starting from Xero.NetStandard.OAuth2Client v1.0.0, we have dropped the dependency on IHttpClientFatory. Plase refer to older IHttpClientFactory implementation example for ![dotnet core](https://github.com/XeroAPI/xero-netstandard-oauth2-starter-dotnet-core/tree/ihttpclientfactory-example) and ![dotnet framework](https://github.com/XeroAPI/xero-netstandard-oauth2-starter-app-dotnet-framework/tree/ihttpclientfactory-example). 
 
 ### Build the login link - the code flow (a .NET Core Mvc example):
 ```csharp
@@ -80,7 +83,6 @@ To get started you will just need two things to make calls to the Accounting Api
     using Xero.NetStandard.OAuth2.Client;
     using Xero.NetStandard.OAuth2.Config;
     using Xero.NetStandard.OAuth2.Token;
-    using Microsoft.Extensions.Options;
     using System;
     using System.Net.Http;
     using System.Threading.Tasks;
@@ -94,13 +96,11 @@ To get started you will just need two things to make calls to the Accounting Api
       {
         private readonly ILogger<HomeController> _logger;
         private readonly IOptions<XeroConfiguration> XeroConfig;
-        private readonly IHttpClientFactory httpClientFactory;
 
-        public XeroOauth2Controller(IOptions<XeroConfiguration> config, IHttpClientFactory httpClientFactory, ILogger<HomeController> logger)
+        public XeroOauth2Controller(IOptions<XeroConfiguration> config, ILogger<HomeController> logger)
         {
           _logger = logger;
           this.XeroConfig = config;
-          this.httpClientFactory = httpClientFactory;
         }
 
         public IActionResult Index()
@@ -111,7 +111,7 @@ To get started you will just need two things to make calls to the Accounting Api
           xconfig.CallbackUri = new Uri("https://localhost:5001"); //default for standard webapi template
           xconfig.Scope = "openid profile email offline_access files accounting.transactions accounting.contacts";
 
-          var client = new XeroClient(xconfig, httpClientFactory);
+          var client = new XeroClient(xconfig);
 
           return Redirect(client.BuildLoginUri());
         }
@@ -157,7 +157,6 @@ On the way back you will get a parameter with code and state
     using Xero.NetStandard.OAuth2.Client;
     using Xero.NetStandard.OAuth2.Config;
     using Xero.NetStandard.OAuth2.Token;
-    using Microsoft.Extensions.Options;
     using System;
     using System.Net.Http;
     using System.Threading.Tasks;
@@ -171,13 +170,11 @@ On the way back you will get a parameter with code and state
       {
         private readonly ILogger<HomeController> _logger;
         private readonly IOptions<XeroConfiguration> XeroConfig;
-        private readonly IHttpClientFactory httpClientFactory;
 
-        public XeroOauth2Controller(IOptions<XeroConfiguration> config, IHttpClientFactory httpClientFactory, ILogger<HomeController> logger)
+        public XeroOauth2Controller(IOptions<XeroConfiguration> config, ILogger<HomeController> logger)
         {
           _logger = logger;
           this.XeroConfig = config;
-          this.httpClientFactory = httpClientFactory;
         }
 
         public IActionResult Index()
@@ -188,7 +185,7 @@ On the way back you will get a parameter with code and state
           xconfig.Scope = "openid profile email offline_access files accounting.transactions accounting.contacts";
 	  xconfig.State = "YOUR_STATE"
 
-          var client = new XeroClient(xconfig, httpClientFactory);
+          var client = new XeroClient(xconfig);
 
           // generate a random codeVerifier
           var validChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~";          
@@ -211,46 +208,19 @@ On the way back you will get a parameter with code and state
 
 ```csharp
 	XeroConfiguration xconfig = new XeroConfiguration(); 
-    
 	xconfig.ClientId = "yourClientId";
-	xconfig.ClientSecret = "yourClientSecret";
 	xconfig.CallbackUri = new Uri("https://localhost:5001") //default for standard webapi template
 	xconfig.Scope = "openid profile email files accounting.transactions accounting.contacts offline_access";
 	
 	var client = new XeroClient(xconfig);
-	
-  string codeVerifier = "Aaaaaaaaaa.Bbbbbbbbbb.0000000000.1111111111";
+  	string codeVerifier = "Aaaaaaaaaa.Bbbbbbbbbb.0000000000.1111111111";
 
-	//before getting the access token please check that the state matches
 	await client.RequestAccessTokenPkceAsync(code, codeVerifier);
-    
-	//from here you will need to access your Xero Tenants
-	List<Tenant> tenants = await client.GetConnections();
-    
-	// you will now have the tenant id and access token
-	foreach (Tenant tenant in tenants)
-	{
-		// do something with your tenant and access token
-		//client.AccessToken;
-		//tenant.TenantId;
-	}
 ```
 
 ### To refresh your token. Just call the refresh (shared between code & PKCE flows)
 ```csharp
-	xeroClient.RefreshTokenAsync(xeroToken); //use the latest token you have
-```
-
-```csharp
-	//Here is a full example using a webapi
-	[HttpGet]
-	public async Task<ActionResult> Index(string code, string state)
-	{
-		var client = new XeroClient(config.Value, httpClientFactory);
-		var xeroToken = (XeroOAuth2Token)await client.RequestXeroTokenAsync(code);
-		TokenUtilities.StoreToken(Environment.MachineName, xeroToken);
-		return RedirectToAction("Invoices", "Accounting");
-	}
+	client.RefreshTokenAsync(xeroToken);
 ```
 
 To setup the main API object see the snippet below:
