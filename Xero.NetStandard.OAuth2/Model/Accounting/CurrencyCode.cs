@@ -1039,7 +1039,13 @@ namespace Xero.NetStandard.OAuth2.Model.Accounting
         /// Enum ZWD for value: ZWD
         /// </summary>
         [EnumMember(Value = "ZWD")]
-        ZWD = 168
+        ZWD = 168,
+
+        /// <summary>
+        /// Enum Empty for value: 
+        /// </summary>
+        [EnumMember(Value = "")]
+        Empty = 169
 
     }
 

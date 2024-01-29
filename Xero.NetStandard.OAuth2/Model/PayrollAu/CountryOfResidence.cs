@@ -1531,7 +1531,13 @@ namespace Xero.NetStandard.OAuth2.Model.PayrollAu
         /// Enum SS for value: SS
         /// </summary>
         [EnumMember(Value = "SS")]
-        SS = 250
+        SS = 250,
+
+        /// <summary>
+        /// Enum Empty for value: 
+        /// </summary>
+        [EnumMember(Value = "")]
+        Empty = 251
 
     }
 

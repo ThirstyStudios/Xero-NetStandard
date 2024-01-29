@@ -139,7 +139,31 @@ namespace Xero.NetStandard.OAuth2.Model.Accounting
         /// Enum PAYG for value: PAYG
         /// </summary>
         [EnumMember(Value = "PAYG")]
-        PAYG = 18
+        PAYG = 18,
+
+        /// <summary>
+        /// Enum PAYGLIABILITY for value: PAYGLIABILITY
+        /// </summary>
+        [EnumMember(Value = "PAYGLIABILITY")]
+        PAYGLIABILITY = 19,
+
+        /// <summary>
+        /// Enum SUPERANNUATIONEXPENSE for value: SUPERANNUATIONEXPENSE
+        /// </summary>
+        [EnumMember(Value = "SUPERANNUATIONEXPENSE")]
+        SUPERANNUATIONEXPENSE = 20,
+
+        /// <summary>
+        /// Enum SUPERANNUATIONLIABILITY for value: SUPERANNUATIONLIABILITY
+        /// </summary>
+        [EnumMember(Value = "SUPERANNUATIONLIABILITY")]
+        SUPERANNUATIONLIABILITY = 21,
+
+        /// <summary>
+        /// Enum WAGESEXPENSE for value: WAGESEXPENSE
+        /// </summary>
+        [EnumMember(Value = "WAGESEXPENSE")]
+        WAGESEXPENSE = 22
 
     }
 

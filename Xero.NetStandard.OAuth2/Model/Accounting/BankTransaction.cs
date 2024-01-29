@@ -271,6 +271,12 @@ namespace Xero.NetStandard.OAuth2.Model.Accounting
         public List<ValidationError> ValidationErrors { get; set; }
 
         /// <summary>
+        /// BatchPayment
+        /// </summary>
+        [DataMember(Name = "BatchPayment", EmitDefaultValue = false)]
+        public BatchPayment BatchPayment { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
