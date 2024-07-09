@@ -2860,6 +2860,267 @@ ul.nav-tabs {
     "url" : "http://developer.xero.com/documentation/api/organisation/"
   }
 };
+      defs["GetBankTransactionsResponse"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "Id" : {
+      "type" : "string"
+    },
+    "Status" : {
+      "type" : "string"
+    },
+    "ProviderName" : {
+      "type" : "string"
+    },
+    "DateTimeUTC" : {
+      "type" : "string"
+    },
+    "PageInfo" : {
+      "$ref" : "#/components/schemas/PageInfo"
+    },
+    "BankTransactions" : {
+      "minItems" : 1,
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/components/schemas/BankTransaction"
+      }
+    }
+  },
+  "description" : ""
+};
+      defs["GetContactsResponse"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "Id" : {
+      "type" : "string"
+    },
+    "Status" : {
+      "type" : "string"
+    },
+    "ProviderName" : {
+      "type" : "string"
+    },
+    "DateTimeUTC" : {
+      "type" : "string"
+    },
+    "PageInfo" : {
+      "$ref" : "#/components/schemas/PageInfo"
+    },
+    "Contacts" : {
+      "minItems" : 1,
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/components/schemas/Contact"
+      }
+    }
+  },
+  "description" : ""
+};
+      defs["GetCreditNotesResponse"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "Id" : {
+      "type" : "string"
+    },
+    "Status" : {
+      "type" : "string"
+    },
+    "ProviderName" : {
+      "type" : "string"
+    },
+    "DateTimeUTC" : {
+      "type" : "string"
+    },
+    "PageInfo" : {
+      "$ref" : "#/components/schemas/PageInfo"
+    },
+    "CreditNotes" : {
+      "minItems" : 1,
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/components/schemas/CreditNote"
+      }
+    }
+  },
+  "description" : ""
+};
+      defs["GetInvoicesResponse"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "Id" : {
+      "type" : "string"
+    },
+    "Status" : {
+      "type" : "string"
+    },
+    "ProviderName" : {
+      "type" : "string"
+    },
+    "DateTimeUTC" : {
+      "type" : "string"
+    },
+    "PageInfo" : {
+      "$ref" : "#/components/schemas/PageInfo"
+    },
+    "Invoices" : {
+      "minItems" : 1,
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/components/schemas/Invoice"
+      }
+    }
+  },
+  "description" : ""
+};
+      defs["GetManualJournalsResponse"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "Id" : {
+      "type" : "string"
+    },
+    "Status" : {
+      "type" : "string"
+    },
+    "ProviderName" : {
+      "type" : "string"
+    },
+    "DateTimeUTC" : {
+      "type" : "string"
+    },
+    "PageInfo" : {
+      "$ref" : "#/components/schemas/PageInfo"
+    },
+    "ManualJournals" : {
+      "minItems" : 1,
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/components/schemas/ManualJournal"
+      }
+    }
+  },
+  "description" : ""
+};
+      defs["GetOverpaymentsResponse"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "Id" : {
+      "type" : "string"
+    },
+    "Status" : {
+      "type" : "string"
+    },
+    "ProviderName" : {
+      "type" : "string"
+    },
+    "DateTimeUTC" : {
+      "type" : "string"
+    },
+    "PageInfo" : {
+      "$ref" : "#/components/schemas/PageInfo"
+    },
+    "Overpayments" : {
+      "minItems" : 1,
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/components/schemas/Overpayment"
+      }
+    }
+  },
+  "description" : ""
+};
+      defs["GetPaymentsResponse"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "Id" : {
+      "type" : "string"
+    },
+    "Status" : {
+      "type" : "string"
+    },
+    "ProviderName" : {
+      "type" : "string"
+    },
+    "DateTimeUTC" : {
+      "type" : "string"
+    },
+    "PageInfo" : {
+      "$ref" : "#/components/schemas/PageInfo"
+    },
+    "Payments" : {
+      "minItems" : 1,
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/components/schemas/Payment"
+      }
+    }
+  },
+  "description" : ""
+};
+      defs["GetPrepaymentsResponse"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "Id" : {
+      "type" : "string"
+    },
+    "Status" : {
+      "type" : "string"
+    },
+    "ProviderName" : {
+      "type" : "string"
+    },
+    "DateTimeUTC" : {
+      "type" : "string"
+    },
+    "PageInfo" : {
+      "$ref" : "#/components/schemas/PageInfo"
+    },
+    "Prepayments" : {
+      "minItems" : 1,
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/components/schemas/Prepayment"
+      }
+    }
+  },
+  "description" : ""
+};
+      defs["GetPurchaseOrdersResponse"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "Id" : {
+      "type" : "string"
+    },
+    "Status" : {
+      "type" : "string"
+    },
+    "ProviderName" : {
+      "type" : "string"
+    },
+    "DateTimeUTC" : {
+      "type" : "string"
+    },
+    "PageInfo" : {
+      "$ref" : "#/components/schemas/PageInfo"
+    },
+    "PurchaseOrders" : {
+      "minItems" : 1,
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/components/schemas/PurchaseOrder"
+      }
+    }
+  },
+  "description" : ""
+};
       defs["HistoryRecord"] = {
   "title" : "",
   "type" : "object",
@@ -4062,7 +4323,7 @@ ul.nav-tabs {
     "Class" : {
       "type" : "string",
       "description" : "Organisation Classes describe which plan the Xero organisation is on (e.g. DEMO, TRIAL, PREMIUM)",
-      "enum" : [ "DEMO", "TRIAL", "STARTER", "STANDARD", "PREMIUM", "PREMIUM_20", "PREMIUM_50", "PREMIUM_100", "LEDGER", "GST_CASHBOOK", "NON_GST_CASHBOOK", "ULTIMATE", "LITE" ]
+      "enum" : [ "DEMO", "TRIAL", "STARTER", "STANDARD", "PREMIUM", "PREMIUM_20", "PREMIUM_50", "PREMIUM_100", "LEDGER", "GST_CASHBOOK", "NON_GST_CASHBOOK", "ULTIMATE", "LITE", "IGNITE", "GROW", "COMPREHENSIVE" ]
     },
     "Edition" : {
       "type" : "string",
@@ -4248,6 +4509,25 @@ ul.nav-tabs {
   "description" : "",
   "x-isObjectArray" : true
 };
+      defs["PageInfo"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "Page" : {
+      "type" : "integer"
+    },
+    "PageSize" : {
+      "type" : "integer"
+    },
+    "TotalPages" : {
+      "type" : "integer"
+    },
+    "TotalRows" : {
+      "type" : "integer"
+    }
+  },
+  "description" : "Pagination information"
+};
       defs["Payment"] = {
   "title" : "",
   "type" : "object",
@@ -4374,6 +4654,13 @@ ul.nav-tabs {
     "ValidationErrors" : {
       "type" : "array",
       "description" : "Displays array of validation error messages from the API",
+      "items" : {
+        "$ref" : "#/components/schemas/ValidationError"
+      }
+    },
+    "Warnings" : {
+      "type" : "array",
+      "description" : "Displays array of warning messages from the API",
       "items" : {
         "$ref" : "#/components/schemas/ValidationError"
       }
@@ -5632,7 +5919,7 @@ ul.nav-tabs {
     "ReportTaxType" : {
       "type" : "string",
       "description" : "See ReportTaxTypes",
-      "enum" : [ "AVALARA", "BASEXCLUDED", "CAPITALSALESOUTPUT", "CAPITALEXPENSESINPUT", "ECOUTPUT", "ECOUTPUTSERVICES", "ECINPUT", "ECACQUISITIONS", "EXEMPTEXPENSES", "EXEMPTINPUT", "EXEMPTOUTPUT", "GSTONIMPORTS", "INPUT", "INPUTTAXED", "MOSSSALES", "NONE", "NONEOUTPUT", "OUTPUT", "PURCHASESINPUT", "SALESOUTPUT", "EXEMPTCAPITAL", "EXEMPTEXPORT", "CAPITALEXINPUT", "GSTONCAPIMPORTS", "GSTONCAPITALIMPORTS", "REVERSECHARGES", "PAYMENTS", "INVOICE", "CASH", "ACCRUAL", "FLATRATECASH", "FLATRATEACCRUAL", "ACCRUALS", "TXCA", "SRCAS", "DSOUTPUT", "BLINPUT2", "EPINPUT", "IMINPUT2", "MEINPUT", "IGDSINPUT2", "ESN33OUTPUT", "OPINPUT", "OSOUTPUT", "TXN33INPUT", "TXESSINPUT", "TXREINPUT", "TXPETINPUT", "NRINPUT", "ES33OUTPUT", "ZERORATEDINPUT", "ZERORATEDOUTPUT", "DRCHARGESUPPLY", "DRCHARGE", "CAPINPUT", "CAPIMPORTS", "IMINPUT", "INPUT2", "CIUINPUT", "SRINPUT", "OUTPUT2", "SROUTPUT", "CAPOUTPUT", "SROUTPUT2", "CIUOUTPUT", "ZROUTPUT", "ZREXPORT", "ACC28PLUS", "ACCUPTO28", "OTHEROUTPUT", "SHOUTPUT", "ZRINPUT", "BADDEBT", "OTHERINPUT", "BADDEBTRELIEF", "IGDSINPUT3", "SROVR", "TOURISTREFUND", "TXRCN33", "TXRCRE", "TXRCESS", "TXRCTS", "CAPEXINPUT", "UNDEFINED", "CAPEXOUTPUT", "ZEROEXPOUTPUT", "GOODSIMPORT", "NONEINPUT", "NOTREPORTED", "SROVRRS", "SROVRLVG", "SRLVG", "IM", "IMESS", "IMN33", "IMRE", "BADDEBTRECOVERY", "USSALESTAX" ]
+      "enum" : [ "AVALARA", "BASEXCLUDED", "CAPITALSALESOUTPUT", "CAPITALEXPENSESINPUT", "ECOUTPUT", "ECOUTPUTSERVICES", "ECINPUT", "ECACQUISITIONS", "EXEMPTEXPENSES", "EXEMPTINPUT", "EXEMPTOUTPUT", "GSTONIMPORTS", "INPUT", "INPUTTAXED", "MOSSSALES", "NONE", "NONEOUTPUT", "OUTPUT", "PURCHASESINPUT", "SALESOUTPUT", "EXEMPTCAPITAL", "EXEMPTEXPORT", "CAPITALEXINPUT", "GSTONCAPIMPORTS", "GSTONCAPITALIMPORTS", "REVERSECHARGES", "PAYMENTS", "INVOICE", "CASH", "ACCRUAL", "FLATRATECASH", "FLATRATEACCRUAL", "ACCRUALS", "TXCA", "SRCAS", "DSOUTPUT", "BLINPUT2", "EPINPUT", "IMINPUT2", "MEINPUT", "IGDSINPUT2", "ESN33OUTPUT", "OPINPUT", "OSOUTPUT", "TXN33INPUT", "TXESSINPUT", "TXREINPUT", "TXPETINPUT", "NRINPUT", "ES33OUTPUT", "ZERORATEDINPUT", "ZERORATEDOUTPUT", "DRCHARGESUPPLY", "DRCHARGE", "CAPINPUT", "CAPIMPORTS", "IMINPUT", "INPUT2", "CIUINPUT", "SRINPUT", "OUTPUT2", "SROUTPUT", "CAPOUTPUT", "SROUTPUT2", "CIUOUTPUT", "ZROUTPUT", "ZREXPORT", "ACC28PLUS", "ACCUPTO28", "OTHEROUTPUT", "SHOUTPUT", "ZRINPUT", "BADDEBT", "OTHERINPUT", "BADDEBTRELIEF", "IGDSINPUT3", "SROVR", "TOURISTREFUND", "TXRCN33", "TXRCRE", "TXRCESS", "TXRCTS", "CAPEXINPUT", "UNDEFINED", "CAPEXOUTPUT", "ZEROEXPOUTPUT", "GOODSIMPORT", "NONEINPUT", "NOTREPORTED", "SROVRRS", "SROVRLVG", "SRLVG", "IM", "IMESS", "IMN33", "IMRE", "BADDEBTRECOVERY", "USSALESTAX", "BLINPUT3" ]
     },
     "CanApplyToAssets" : {
       "type" : "boolean",
@@ -5697,7 +5984,7 @@ ul.nav-tabs {
   "title" : "",
   "type" : "string",
   "description" : "See Tax Types – can only be used on update calls",
-  "enum" : [ "OUTPUT", "INPUT", "CAPEXINPUT", "EXEMPTEXPORT", "EXEMPTEXPENSES", "EXEMPTCAPITAL", "EXEMPTOUTPUT", "INPUTTAXED", "BASEXCLUDED", "GSTONCAPIMPORTS", "GSTONIMPORTS", "NONE", "INPUT2", "ZERORATED", "OUTPUT2", "CAPEXINPUT2", "CAPEXOUTPUT", "CAPEXOUTPUT2", "CAPEXSRINPUT", "CAPEXSROUTPUT", "ECACQUISITIONS", "ECZRINPUT", "ECZROUTPUT", "ECZROUTPUTSERVICES", "EXEMPTINPUT", "REVERSECHARGES", "RRINPUT", "RROUTPUT", "SRINPUT", "SROUTPUT", "ZERORATEDINPUT", "ZERORATEDOUTPUT", "BLINPUT", "DSOUTPUT", "EPINPUT", "ES33OUTPUT", "ESN33OUTPUT", "IGDSINPUT2", "IMINPUT2", "MEINPUT", "NRINPUT", "OPINPUT", "OSOUTPUT", "TXESSINPUT", "TXN33INPUT", "TXPETINPUT", "TXREINPUT", "INPUT3", "INPUT4", "OUTPUT3", "OUTPUT4", "SROUTPUT2", "TXCA", "SRCAS", "BLINPUT2", "DRCHARGESUPPLY20", "DRCHARGE20", "DRCHARGESUPPLY5", "DRCHARGE5", "BADDEBTRELIEF", "IGDSINPUT3", "SROVR", "TOURISTREFUND", "TXRCN33", "TXRCRE", "TXRCESS", "TXRCTS", "OUTPUTY23", "DSOUTPUTY23", "INPUTY23", "IMINPUT2Y23", "IGDSINPUT2Y23", "TXPETINPUTY23", "TXESSINPUTY23", "TXN33INPUTY23", "TXREINPUTY23", "TXCAY23", "BADDEBTRELIEFY23", "IGDSINPUT3Y23", "SROVRRSY23", "SROVRLVGY23", "SRLVGY23", "TXRCN33Y23", "TXRCREY23", "TXRCESSY23", "TXRCTSY23", "IM", "IMY23", "IMESS", "IMESSY23", "IMN33", "IMN33Y23", "IMRE", "IMREY23", "BADDEBTRECOVERY", "BADDEBTRECOVERYY23", "OUTPUTY24", "DSOUTPUTY24", "INPUTY24", "IGDSINPUT2Y24", "TXPETINPUTY24", "TXESSINPUTY24", "TXN33INPUTY24", "TXREINPUTY24", "TXCAY24", "BADDEBTRELIEFY24", "IGDSINPUT3Y24", "SROVRRSY24", "SROVRLVGY24", "SRLVGY24", "TXRCTSY24", "TXRCESSY24", "TXRCN33Y24", "TXRCREY24", "IMY24", "IMESSY24", "IMN33Y24", "IMREY24", "BADDEBTRECOVERYY24", "OSOUTPUT2" ]
+  "enum" : [ "OUTPUT", "INPUT", "CAPEXINPUT", "EXEMPTEXPORT", "EXEMPTEXPENSES", "EXEMPTCAPITAL", "EXEMPTOUTPUT", "INPUTTAXED", "BASEXCLUDED", "GSTONCAPIMPORTS", "GSTONIMPORTS", "NONE", "INPUT2", "ZERORATED", "OUTPUT2", "CAPEXINPUT2", "CAPEXOUTPUT", "CAPEXOUTPUT2", "CAPEXSRINPUT", "CAPEXSROUTPUT", "ECACQUISITIONS", "ECZRINPUT", "ECZROUTPUT", "ECZROUTPUTSERVICES", "EXEMPTINPUT", "REVERSECHARGES", "RRINPUT", "RROUTPUT", "SRINPUT", "SROUTPUT", "ZERORATEDINPUT", "ZERORATEDOUTPUT", "BLINPUT", "DSOUTPUT", "EPINPUT", "ES33OUTPUT", "ESN33OUTPUT", "IGDSINPUT2", "IMINPUT2", "MEINPUT", "NRINPUT", "OPINPUT", "OSOUTPUT", "TXESSINPUT", "TXN33INPUT", "TXPETINPUT", "TXREINPUT", "INPUT3", "INPUT4", "OUTPUT3", "OUTPUT4", "SROUTPUT2", "TXCA", "SRCAS", "BLINPUT2", "DRCHARGESUPPLY20", "DRCHARGE20", "DRCHARGESUPPLY5", "DRCHARGE5", "BADDEBTRELIEF", "IGDSINPUT3", "SROVR", "TOURISTREFUND", "TXRCN33", "TXRCRE", "TXRCESS", "TXRCTS", "OUTPUTY23", "DSOUTPUTY23", "INPUTY23", "IMINPUT2Y23", "IGDSINPUT2Y23", "TXPETINPUTY23", "TXESSINPUTY23", "TXN33INPUTY23", "TXREINPUTY23", "TXCAY23", "BADDEBTRELIEFY23", "IGDSINPUT3Y23", "SROVRRSY23", "SROVRLVGY23", "SRLVGY23", "TXRCN33Y23", "TXRCREY23", "TXRCESSY23", "TXRCTSY23", "IM", "IMY23", "IMESS", "IMESSY23", "IMN33", "IMN33Y23", "IMRE", "IMREY23", "BADDEBTRECOVERY", "BADDEBTRECOVERYY23", "OUTPUTY24", "DSOUTPUTY24", "INPUTY24", "IGDSINPUT2Y24", "TXPETINPUTY24", "TXESSINPUTY24", "TXN33INPUTY24", "TXREINPUTY24", "TXCAY24", "BADDEBTRELIEFY24", "IGDSINPUT3Y24", "SROVRRSY24", "SROVRLVGY24", "SRLVGY24", "TXRCTSY24", "TXRCESSY24", "TXRCN33Y24", "TXRCREY24", "IMY24", "IMESSY24", "IMN33Y24", "IMREY24", "BADDEBTRECOVERYY24", "OSOUTPUT2", "BLINPUT3", "BLINPUT3Y23", "BLINPUT3Y24" ]
 };
       defs["TenNinetyNineContact"] = {
   "title" : "",
@@ -6094,7 +6381,7 @@ ul.nav-tabs {
           <nav id="scrollingNav">
             <ul class="sidenav nav nav-list">
               <li class="nav-header" data-group="Accounting"><strong>SDK: </strong><span id='sdk-name'></span></li>
-              <li class="nav-header" data-group="Accounting"><strong>VSN: </strong>3.34.4</li>
+              <li class="nav-header" data-group="Accounting"><strong>VSN: </strong>7.0.0</li>
               <li class="nav-header" data-group="Accounting"><a href="#api-Accounting">Methods</a></li>
               <li data-group="Accounting" data-name="createAccount" class="">
                 <a href="#api-Accounting-createAccount">createAccount</a>
@@ -6671,6 +6958,9 @@ ul.nav-tabs {
               </li>
               <li data-group="Accounting" data-name="getReportsList" class="">
                 <a href="#api-Accounting-getReportsList">getReportsList</a>
+              </li>
+              <li data-group="Accounting" data-name="getTaxRateByTaxType" class="">
+                <a href="#api-Accounting-getTaxRateByTaxType">getTaxRateByTaxType</a>
               </li>
               <li data-group="Accounting" data-name="getTaxRates" class="">
                 <a href="#api-Accounting-getTaxRates">getTaxRates</a>
@@ -7638,9 +7928,9 @@ namespace Example
             var accessToken = "YOUR_ACCESS_TOKEN";          
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
             var unitdp = 4;
+            var idempotencyKey = "KEY_VALUE";
 
             var contact = new Contact();
             contact.ContactID = Guid.Parse("00000000-0000-0000-0000-000000000000");
@@ -7668,7 +7958,7 @@ namespace Example
             bankTransactions._BankTransactions = bankTransactionsList;
             
             try {
-                var result = await apiInstance.CreateBankTransactionsAsync(accessToken, xeroTenantId, bankTransactions, idempotencyKey, summarizeErrors, unitdp);
+                var result = await apiInstance.CreateBankTransactionsAsync(accessToken, xeroTenantId, bankTransactions, summarizeErrors, unitdp, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -9807,8 +10097,8 @@ namespace Example
             var accessToken = "YOUR_ACCESS_TOKEN";          
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
+            var idempotencyKey = "KEY_VALUE";
 
             var phone = new Phone();
             phone.PhoneNumber = "555-1212";
@@ -9827,7 +10117,7 @@ namespace Example
             contacts._Contacts = contactsList;
             
             try {
-                var result = await apiInstance.CreateContactsAsync(accessToken, xeroTenantId, contacts, idempotencyKey, summarizeErrors);
+                var result = await apiInstance.CreateContactsAsync(accessToken, xeroTenantId, contacts, summarizeErrors, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -10005,8 +10295,8 @@ namespace Example
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
             var creditNoteID = Guid.Parse("00000000-0000-0000-0000-000000000000");
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
+            var idempotencyKey = "KEY_VALUE";
             var currDate = DateTime.Now;
 
             var invoice = new Invoice();
@@ -10023,7 +10313,7 @@ namespace Example
             allocations._Allocations = allocationsList;
             
             try {
-                var result = await apiInstance.CreateCreditNoteAllocationAsync(accessToken, xeroTenantId, creditNoteID, allocations, idempotencyKey, summarizeErrors);
+                var result = await apiInstance.CreateCreditNoteAllocationAsync(accessToken, xeroTenantId, creditNoteID, allocations, summarizeErrors, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -10235,12 +10525,12 @@ namespace Example
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
             var creditNoteID = Guid.Parse("00000000-0000-0000-0000-000000000000");
             var fileName = "xero-dev.jpg";
-            var idempotencyKey = "KEY_VALUE";
             var includeOnline = true;
+            var idempotencyKey = "KEY_VALUE";
             byte[] body = System.IO.File.ReadAllBytes(fileName);
             
             try {
-                var result = await apiInstance.CreateCreditNoteAttachmentByFileNameAsync(accessToken, xeroTenantId, creditNoteID, fileName, body, idempotencyKey, includeOnline);
+                var result = await apiInstance.CreateCreditNoteAttachmentByFileNameAsync(accessToken, xeroTenantId, creditNoteID, fileName, body, includeOnline, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -10668,9 +10958,9 @@ namespace Example
             var accessToken = "YOUR_ACCESS_TOKEN";          
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
             var unitdp = 4;
+            var idempotencyKey = "KEY_VALUE";
             var currDate = DateTime.Now;
 
             var contact = new Contact();
@@ -10696,7 +10986,7 @@ namespace Example
             creditNotes._CreditNotes = creditNotesList;
             
             try {
-                var result = await apiInstance.CreateCreditNotesAsync(accessToken, xeroTenantId, creditNotes, idempotencyKey, summarizeErrors, unitdp);
+                var result = await apiInstance.CreateCreditNotesAsync(accessToken, xeroTenantId, creditNotes, summarizeErrors, unitdp, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -11050,8 +11340,8 @@ namespace Example
             var accessToken = "YOUR_ACCESS_TOKEN";          
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
+            var idempotencyKey = "KEY_VALUE";
 
             var employee = new Employee();
             employee.FirstName = "Nick";
@@ -11063,7 +11353,7 @@ namespace Example
             employees._Employees = employeesList;
             
             try {
-                var result = await apiInstance.CreateEmployeesAsync(accessToken, xeroTenantId, employees, idempotencyKey, summarizeErrors);
+                var result = await apiInstance.CreateEmployeesAsync(accessToken, xeroTenantId, employees, summarizeErrors, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -11610,12 +11900,12 @@ namespace Example
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
             var invoiceID = Guid.Parse("00000000-0000-0000-0000-000000000000");
             var fileName = "xero-dev.jpg";
-            var idempotencyKey = "KEY_VALUE";
             var includeOnline = true;
+            var idempotencyKey = "KEY_VALUE";
             byte[] body = System.IO.File.ReadAllBytes(fileName);
             
             try {
-                var result = await apiInstance.CreateInvoiceAttachmentByFileNameAsync(accessToken, xeroTenantId, invoiceID, fileName, body, idempotencyKey, includeOnline);
+                var result = await apiInstance.CreateInvoiceAttachmentByFileNameAsync(accessToken, xeroTenantId, invoiceID, fileName, body, includeOnline, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -12043,9 +12333,9 @@ namespace Example
             var accessToken = "YOUR_ACCESS_TOKEN";          
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
             var unitdp = 4;
+            var idempotencyKey = "KEY_VALUE";
             var dateValue = new DateTime(2020, 10, 10);
             var dueDateValue = new DateTime(2020, 10, 10);
 
@@ -12082,7 +12372,7 @@ namespace Example
             invoices._Invoices = invoicesList;
             
             try {
-                var result = await apiInstance.CreateInvoicesAsync(accessToken, xeroTenantId, invoices, idempotencyKey, summarizeErrors, unitdp);
+                var result = await apiInstance.CreateInvoicesAsync(accessToken, xeroTenantId, invoices, summarizeErrors, unitdp, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -12474,9 +12764,9 @@ namespace Example
             var accessToken = "YOUR_ACCESS_TOKEN";          
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
             var unitdp = 4;
+            var idempotencyKey = "KEY_VALUE";
 
             var purchaseDetails = new Purchase();
             purchaseDetails.COGSAccountCode = "500";
@@ -12494,7 +12784,7 @@ namespace Example
             items._Items = itemsList;
             
             try {
-                var result = await apiInstance.CreateItemsAsync(accessToken, xeroTenantId, items, idempotencyKey, summarizeErrors, unitdp);
+                var result = await apiInstance.CreateItemsAsync(accessToken, xeroTenantId, items, summarizeErrors, unitdp, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -13255,8 +13545,8 @@ namespace Example
             var accessToken = "YOUR_ACCESS_TOKEN";          
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
+            var idempotencyKey = "KEY_VALUE";
             var dateValue = new DateTime(2020, 10, 10);
             var manualJournalLines = new List&lt;ManualJournalLine&gt;();
 
@@ -13283,7 +13573,7 @@ namespace Example
             manualJournals._ManualJournals = manualJournalsList;
             
             try {
-                var result = await apiInstance.CreateManualJournalsAsync(accessToken, xeroTenantId, manualJournals, idempotencyKey, summarizeErrors);
+                var result = await apiInstance.CreateManualJournalsAsync(accessToken, xeroTenantId, manualJournals, summarizeErrors, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -13461,8 +13751,8 @@ namespace Example
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
             var overpaymentID = Guid.Parse("00000000-0000-0000-0000-000000000000");
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
+            var idempotencyKey = "KEY_VALUE";
             var currDate = DateTime.Now;
 
             var invoice = new Invoice();
@@ -13479,7 +13769,7 @@ namespace Example
             allocations._Allocations = allocationsList;
             
             try {
-                var result = await apiInstance.CreateOverpaymentAllocationsAsync(accessToken, xeroTenantId, overpaymentID, allocations, idempotencyKey, summarizeErrors);
+                var result = await apiInstance.CreateOverpaymentAllocationsAsync(accessToken, xeroTenantId, overpaymentID, allocations, summarizeErrors, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -14413,8 +14703,8 @@ namespace Example
             var accessToken = "YOUR_ACCESS_TOKEN";          
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
+            var idempotencyKey = "KEY_VALUE";
             var dateValue = DateTime.Now;
 
             var invoice = new Invoice();
@@ -14435,7 +14725,7 @@ namespace Example
             payments._Payments = paymentsList;
             
             try {
-                var result = await apiInstance.CreatePaymentsAsync(accessToken, xeroTenantId, payments, idempotencyKey, summarizeErrors);
+                var result = await apiInstance.CreatePaymentsAsync(accessToken, xeroTenantId, payments, summarizeErrors, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -14613,8 +14903,8 @@ namespace Example
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
             var prepaymentID = Guid.Parse("00000000-0000-0000-0000-000000000000");
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
+            var idempotencyKey = "KEY_VALUE";
             var currDate = DateTime.Now;
 
             var invoice = new Invoice();
@@ -14631,7 +14921,7 @@ namespace Example
             allocations._Allocations = allocationsList;
             
             try {
-                var result = await apiInstance.CreatePrepaymentAllocationsAsync(accessToken, xeroTenantId, prepaymentID, allocations, idempotencyKey, summarizeErrors);
+                var result = await apiInstance.CreatePrepaymentAllocationsAsync(accessToken, xeroTenantId, prepaymentID, allocations, summarizeErrors, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -15443,8 +15733,8 @@ namespace Example
             var accessToken = "YOUR_ACCESS_TOKEN";          
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
+            var idempotencyKey = "KEY_VALUE";
             var dateValue = DateTime.Now;
 
             var contact = new Contact();
@@ -15469,7 +15759,7 @@ namespace Example
             purchaseOrders._PurchaseOrders = purchaseOrdersList;
             
             try {
-                var result = await apiInstance.CreatePurchaseOrdersAsync(accessToken, xeroTenantId, purchaseOrders, idempotencyKey, summarizeErrors);
+                var result = await apiInstance.CreatePurchaseOrdersAsync(accessToken, xeroTenantId, purchaseOrders, summarizeErrors, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -16053,8 +16343,8 @@ namespace Example
             var accessToken = "YOUR_ACCESS_TOKEN";          
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
+            var idempotencyKey = "KEY_VALUE";
             var dateValue = DateTime.Now;
 
             var contact = new Contact();
@@ -16079,7 +16369,7 @@ namespace Example
             quotes._Quotes = quotesList;
             
             try {
-                var result = await apiInstance.CreateQuotesAsync(accessToken, xeroTenantId, quotes, idempotencyKey, summarizeErrors);
+                var result = await apiInstance.CreateQuotesAsync(accessToken, xeroTenantId, quotes, summarizeErrors, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -16256,8 +16546,8 @@ namespace Example
             var accessToken = "YOUR_ACCESS_TOKEN";          
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
-            var idempotencyKey = "KEY_VALUE";
             var unitdp = 4;
+            var idempotencyKey = "KEY_VALUE";
 
             var contact = new Contact();
             contact.ContactID = Guid.Parse("00000000-0000-0000-0000-000000000000");
@@ -16286,7 +16576,7 @@ namespace Example
             receipts._Receipts = receiptsList;
             
             try {
-                var result = await apiInstance.CreateReceiptAsync(accessToken, xeroTenantId, receipts, idempotencyKey, unitdp);
+                var result = await apiInstance.CreateReceiptAsync(accessToken, xeroTenantId, receipts, unitdp, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -17277,11 +17567,11 @@ namespace Example
             var accessToken = "YOUR_ACCESS_TOKEN";          
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
+            var idempotencyKey = "KEY_VALUE";
             
             try {
-                var result = await apiInstance.CreateRepeatingInvoicesAsync(accessToken, xeroTenantId, repeatingInvoices, idempotencyKey, summarizeErrors);
+                var result = await apiInstance.CreateRepeatingInvoicesAsync(accessToken, xeroTenantId, repeatingInvoices, summarizeErrors, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -21587,9 +21877,10 @@ namespace Example
             var order = "Type ASC";
             var page = 1;
             var unitdp = 4;
+            var pageSize = 100;
             
             try {
-                var result = await apiInstance.GetBankTransactionsAsync(accessToken, xeroTenantId, ifModifiedSince, where, order, page, unitdp);
+                var result = await apiInstance.GetBankTransactionsAsync(accessToken, xeroTenantId, ifModifiedSince, where, order, page, unitdp, pageSize);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -21748,6 +22039,26 @@ Up to 100 bank transactions will be returned in a single API call with line item
 
                     <div class="inner description marked">
 e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">pageSize</td>
+<td>
+
+
+    <div id="d2e199_getBankTransactions_pageSize">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+
+                    <div class="inner description marked">
+Number of records to retrieve per page
                     </div>
             </div>
         </div>
@@ -25360,9 +25671,10 @@ namespace Example
             var includeArchived = true;
             var summaryOnly = true;
             var searchTerm = "Joe Bloggs";
+            var pageSize = 100;
             
             try {
-                var result = await apiInstance.GetContactsAsync(accessToken, xeroTenantId, ifModifiedSince, where, order, iDs, page, includeArchived, summaryOnly, searchTerm);
+                var result = await apiInstance.GetContactsAsync(accessToken, xeroTenantId, ifModifiedSince, where, order, iDs, page, includeArchived, summaryOnly, searchTerm, pageSize);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -25584,6 +25896,26 @@ Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller
 
                     <div class="inner description marked">
 Search parameter that performs a case-insensitive text search across the Name, FirstName, LastName, ContactNumber and EmailAddress fields.
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">pageSize</td>
+<td>
+
+
+    <div id="d2e199_getContacts_pageSize">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+
+                    <div class="inner description marked">
+Number of records to retrieve per page
                     </div>
             </div>
         </div>
@@ -26569,9 +26901,10 @@ namespace Example
             var order = "CreditNoteNumber ASC";
             var page = 1;
             var unitdp = 4;
+            var pageSize = 100;
             
             try {
-                var result = await apiInstance.GetCreditNotesAsync(accessToken, xeroTenantId, ifModifiedSince, where, order, page, unitdp);
+                var result = await apiInstance.GetCreditNotesAsync(accessToken, xeroTenantId, ifModifiedSince, where, order, page, unitdp, pageSize);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -26730,6 +27063,26 @@ e.g. page=1 – Up to 100 credit notes will be returned in a single API call wit
 
                     <div class="inner description marked">
 e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">pageSize</td>
+<td>
+
+
+    <div id="d2e199_getCreditNotes_pageSize">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+
+                    <div class="inner description marked">
+Number of records to retrieve per page
                     </div>
             </div>
         </div>
@@ -28719,9 +29072,10 @@ namespace Example
             var createdByMyApp = false;
             var unitdp = 4;
             var summaryOnly = true;
+            var pageSize = 100;
             
             try {
-                var result = await apiInstance.GetInvoicesAsync(accessToken, xeroTenantId, ifModifiedSince, where, order, iDs, invoiceNumbers, contactIDs, statuses, page, includeArchived, createdByMyApp, unitdp, summaryOnly);
+                var result = await apiInstance.GetInvoicesAsync(accessToken, xeroTenantId, ifModifiedSince, where, order, iDs, invoiceNumbers, contactIDs, statuses, page, includeArchived, createdByMyApp, unitdp, summaryOnly, pageSize);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -29026,6 +29380,26 @@ e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal place
 
                     <div class="inner description marked">
 Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient.
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">pageSize</td>
+<td>
+
+
+    <div id="d2e199_getInvoices_pageSize">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+
+                    <div class="inner description marked">
+Number of records to retrieve per page
                     </div>
             </div>
         </div>
@@ -31006,9 +31380,10 @@ namespace Example
             var where = "Status==\"DRAFT\"";
             var order = "Date ASC";
             var page = 1;
+            var pageSize = 100;
             
             try {
-                var result = await apiInstance.GetManualJournalsAsync(accessToken, xeroTenantId, ifModifiedSince, where, order, page);
+                var result = await apiInstance.GetManualJournalsAsync(accessToken, xeroTenantId, ifModifiedSince, where, order, page, pageSize);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -31147,6 +31522,26 @@ Order by an any element
 
                     <div class="inner description marked">
 e.g. page=1 – Up to 100 manual journals will be returned in a single API call with line items shown for each overpayment
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">pageSize</td>
+<td>
+
+
+    <div id="d2e199_getManualJournals_pageSize">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+
+                    <div class="inner description marked">
+Number of records to retrieve per page
                     </div>
             </div>
         </div>
@@ -32648,9 +33043,10 @@ namespace Example
             var where = "Status==\"AUTHORISED\"";
             var order = "Amount ASC";
             var page = 1;
+            var pageSize = 100;
             
             try {
-                var result = await apiInstance.GetPaymentsAsync(accessToken, xeroTenantId, ifModifiedSince, where, order, page);
+                var result = await apiInstance.GetPaymentsAsync(accessToken, xeroTenantId, ifModifiedSince, where, order, page, pageSize);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -32789,6 +33185,26 @@ Order by an any element
 
                     <div class="inner description marked">
 Up to 100 payments will be returned in a single API call
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">pageSize</td>
+<td>
+
+
+    <div id="d2e199_getPayments_pageSize">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+
+                    <div class="inner description marked">
+Number of records to retrieve per page
                     </div>
             </div>
         </div>
@@ -34361,9 +34777,10 @@ namespace Example
             var dateTo = "2019-12-31";
             var order = "PurchaseOrderNumber ASC";
             var page = 1;
+            var pageSize = 100;
             
             try {
-                var result = await apiInstance.GetPurchaseOrdersAsync(accessToken, xeroTenantId, ifModifiedSince, status, dateFrom, dateTo, order, page);
+                var result = await apiInstance.GetPurchaseOrdersAsync(accessToken, xeroTenantId, ifModifiedSince, status, dateFrom, dateTo, order, page, pageSize);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -34542,6 +34959,26 @@ Order by an any element
 
                     <div class="inner description marked">
 To specify a page, append the page parameter to the URL e.g. ?page=1. If there are 100 records in the response you will need to check if there is any more data by fetching the next page e.g ?page=2 and continuing this process until no more results are returned.
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">pageSize</td>
+<td>
+
+
+    <div id="d2e199_getPurchaseOrders_pageSize">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+
+                    <div class="inner description marked">
+Number of records to retrieve per page
                     </div>
             </div>
         </div>
@@ -39612,6 +40049,137 @@ Xero identifier for Tenant
                 </article>
               </div>
               <hr>
+              <div id="api-Accounting-getTaxRateByTaxType">
+                <article id="api-Accounting-getTaxRateByTaxType-0" data-group="User" data-name="getTaxRateByTaxType" data-version="0">
+                  <div class="pull-left">
+                    <h1>getTaxRateByTaxType</h1>
+                    <p>Retrieves a specific tax rate according to given TaxType code</p>
+                  </div>
+                  <div class="pull-right"></div>
+                  <div class="clearfix"></div>
+                  <p></p>
+                  <p class="marked"></p>
+                  <p></p>
+                  <br />
+                  <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/TaxRates/{TaxType}</span></code></pre>
+                  <p>
+                  <h3>Usage and SDK Samples</h3>
+                  </p>
+                  <ul class="nav nav-tabs nav-tabs-examples">
+                    <!-- *****REPLACE***** comment out the other languages <li> -->
+                    <li class=""><a href="#examples-Accounting-getTaxRateByTaxType-0-csharp">C#</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <!-- *****REPLACE***** comment out the other languages tab-pane -->
+                    <div class="tab-pane" id="examples-Accounting-getTaxRateByTaxType-0-csharp">
+                      <pre class="prettyprint"><code class="language-csharp">using System;
+using System.Diagnostics;
+using Xero.NetStandard.OAuth2.Api;
+using Xero.NetStandard.OAuth2.Client;
+using Xero.NetStandard.OAuth2.Model;
+
+namespace Example
+{
+    public class GetTaxRateByTaxTypeExample
+    {
+        public async Task Main()
+        {            
+            var accessToken = "YOUR_ACCESS_TOKEN";          
+            var apiInstance = new AccountingApi();
+            var xeroTenantId = "YOUR_XERO_TENANT_ID";
+            var taxType = "INPUT2";
+            
+            try {
+                var result = await apiInstance.GetTaxRateByTaxTypeAsync(accessToken, xeroTenantId, taxType);
+                Console.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception when calling apiInstance.GetTaxRateByTaxType: " + e.Message );
+            }
+        }
+    }
+}</code></pre>
+                    </div>
+                  </div>
+                  <h2>Scopes</h2>
+                  <table>
+                    
+                    <tr>
+                      <td>accounting.settings</td>
+                      <td>Grant read-write access to organisation and account settings</td>
+                    </tr>
+                    
+                    <tr>
+                      <td>accounting.settings.read</td>
+                      <td>Grant read-only access to organisation and account settings</td>
+                    </tr>
+                    
+                  </table>
+                  <h2>Parameters</h2>
+                  <div class="methodsubtabletitle">Path parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">TaxType<span style="color:red;">*</span></td>
+<td>
+
+
+    <div id="d2e199_getTaxRateByTaxType_taxType">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+A valid TaxType code
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                  <div class="methodsubtabletitle">Header parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">xero-tenant-id<span style="color:red;">*</span></td>
+<td>
+
+
+    <div id="d2e199_getTaxRateByTaxType_xeroTenantId">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+Xero identifier for Tenant
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                </article>
+              </div>
+              <hr>
               <div id="api-Accounting-getTaxRates">
                 <article id="api-Accounting-getTaxRates-0" data-group="User" data-name="getTaxRates" data-version="0">
                   <div class="pull-left">
@@ -39652,10 +40220,9 @@ namespace Example
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
             var where = "Status==\"ACTIVE\"";
             var order = "Name ASC";
-            var taxType = "INPUT";
             
             try {
-                var result = await apiInstance.GetTaxRatesAsync(accessToken, xeroTenantId, where, order, taxType);
+                var result = await apiInstance.GetTaxRatesAsync(accessToken, xeroTenantId, where, order);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -39751,26 +40318,6 @@ Filter by an any element
 
                     <div class="inner description marked">
 Order by an any element
-                    </div>
-            </div>
-        </div>
-    </div>
-</td>
-</tr>
-
-                    <tr><td style="width:150px;">TaxType</td>
-<td>
-
-
-    <div id="d2e199_getTaxRates_taxType">
-        <div class="json-schema-view">
-            <div class="primitive">
-                <span class="type">
-                    String
-                </span>
-
-                    <div class="inner description marked">
-Filter by tax type
                     </div>
             </div>
         </div>
@@ -41013,8 +41560,8 @@ namespace Example
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
             var bankTransactionID = Guid.Parse("00000000-0000-0000-0000-000000000000");
-            var idempotencyKey = "KEY_VALUE";
             var unitdp = 4;
+            var idempotencyKey = "KEY_VALUE";
 
             var contact = new Contact();
             contact.ContactID = Guid.Parse("00000000-0000-0000-0000-000000000000");
@@ -41043,7 +41590,7 @@ namespace Example
             bankTransactions._BankTransactions = bankTransactionsList;
             
             try {
-                var result = await apiInstance.UpdateBankTransactionAsync(accessToken, xeroTenantId, bankTransactionID, bankTransactions, idempotencyKey, unitdp);
+                var result = await apiInstance.UpdateBankTransactionAsync(accessToken, xeroTenantId, bankTransactionID, bankTransactions, unitdp, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -42280,8 +42827,8 @@ namespace Example
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
             var creditNoteID = Guid.Parse("00000000-0000-0000-0000-000000000000");
-            var idempotencyKey = "KEY_VALUE";
             var unitdp = 4;
+            var idempotencyKey = "KEY_VALUE";
             var currDate = DateTime.Now;
 
             var contact = new Contact();
@@ -42309,7 +42856,7 @@ namespace Example
             creditNotes._CreditNotes = creditNotesList;
             
             try {
-                var result = await apiInstance.UpdateCreditNoteAsync(accessToken, xeroTenantId, creditNoteID, creditNotes, idempotencyKey, unitdp);
+                var result = await apiInstance.UpdateCreditNoteAsync(accessToken, xeroTenantId, creditNoteID, creditNotes, unitdp, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -42938,8 +43485,8 @@ namespace Example
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
             var invoiceID = Guid.Parse("00000000-0000-0000-0000-000000000000");
-            var idempotencyKey = "KEY_VALUE";
             var unitdp = 4;
+            var idempotencyKey = "KEY_VALUE";
 
             var invoice = new Invoice();
             invoice.Reference = "I am Iron man";
@@ -42950,7 +43497,7 @@ namespace Example
             invoices._Invoices = invoicesList;
             
             try {
-                var result = await apiInstance.UpdateInvoiceAsync(accessToken, xeroTenantId, invoiceID, invoices, idempotencyKey, unitdp);
+                var result = await apiInstance.UpdateInvoiceAsync(accessToken, xeroTenantId, invoiceID, invoices, unitdp, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -43372,8 +43919,8 @@ namespace Example
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
             var itemID = Guid.Parse("00000000-0000-0000-0000-000000000000");
-            var idempotencyKey = "KEY_VALUE";
             var unitdp = 4;
+            var idempotencyKey = "KEY_VALUE";
 
             var item = new Item();
             item.Code = "ItemCode123";
@@ -43385,7 +43932,7 @@ namespace Example
             items._Items = itemsList;
             
             try {
-                var result = await apiInstance.UpdateItemAsync(accessToken, xeroTenantId, itemID, items, idempotencyKey, unitdp);
+                var result = await apiInstance.UpdateItemAsync(accessToken, xeroTenantId, itemID, items, unitdp, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -44211,9 +44758,9 @@ namespace Example
             var accessToken = "YOUR_ACCESS_TOKEN";          
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
             var unitdp = 4;
+            var idempotencyKey = "KEY_VALUE";
 
             var contact = new Contact();
             contact.ContactID = Guid.Parse("00000000-0000-0000-0000-000000000000");
@@ -44241,7 +44788,7 @@ namespace Example
             bankTransactions._BankTransactions = bankTransactionsList;
             
             try {
-                var result = await apiInstance.UpdateOrCreateBankTransactionsAsync(accessToken, xeroTenantId, bankTransactions, idempotencyKey, summarizeErrors, unitdp);
+                var result = await apiInstance.UpdateOrCreateBankTransactionsAsync(accessToken, xeroTenantId, bankTransactions, summarizeErrors, unitdp, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -44437,8 +44984,8 @@ namespace Example
             var accessToken = "YOUR_ACCESS_TOKEN";          
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
+            var idempotencyKey = "KEY_VALUE";
 
             var phone = new Phone();
             phone.PhoneNumber = "555-1212";
@@ -44457,7 +45004,7 @@ namespace Example
             contacts._Contacts = contactsList;
             
             try {
-                var result = await apiInstance.UpdateOrCreateContactsAsync(accessToken, xeroTenantId, contacts, idempotencyKey, summarizeErrors);
+                var result = await apiInstance.UpdateOrCreateContactsAsync(accessToken, xeroTenantId, contacts, summarizeErrors, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -44633,9 +45180,9 @@ namespace Example
             var accessToken = "YOUR_ACCESS_TOKEN";          
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
             var unitdp = 4;
+            var idempotencyKey = "KEY_VALUE";
             var currDate = DateTime.Now;
 
             var contact = new Contact();
@@ -44661,7 +45208,7 @@ namespace Example
             creditNotes._CreditNotes = creditNotesList;
             
             try {
-                var result = await apiInstance.UpdateOrCreateCreditNotesAsync(accessToken, xeroTenantId, creditNotes, idempotencyKey, summarizeErrors, unitdp);
+                var result = await apiInstance.UpdateOrCreateCreditNotesAsync(accessToken, xeroTenantId, creditNotes, summarizeErrors, unitdp, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -44858,8 +45405,8 @@ namespace Example
             var accessToken = "YOUR_ACCESS_TOKEN";          
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
+            var idempotencyKey = "KEY_VALUE";
 
             var employee = new Employee();
             employee.FirstName = "Nick";
@@ -44871,7 +45418,7 @@ namespace Example
             employees._Employees = employeesList;
             
             try {
-                var result = await apiInstance.UpdateOrCreateEmployeesAsync(accessToken, xeroTenantId, employees, idempotencyKey, summarizeErrors);
+                var result = await apiInstance.UpdateOrCreateEmployeesAsync(accessToken, xeroTenantId, employees, summarizeErrors, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -45048,9 +45595,9 @@ namespace Example
             var accessToken = "YOUR_ACCESS_TOKEN";          
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
             var unitdp = 4;
+            var idempotencyKey = "KEY_VALUE";
             var dateValue = new DateTime(2020, 10, 10);
             var dueDateValue = new DateTime(2020, 10, 10);
 
@@ -45080,7 +45627,7 @@ namespace Example
             invoices._Invoices = invoicesList;
             
             try {
-                var result = await apiInstance.UpdateOrCreateInvoicesAsync(accessToken, xeroTenantId, invoices, idempotencyKey, summarizeErrors, unitdp);
+                var result = await apiInstance.UpdateOrCreateInvoicesAsync(accessToken, xeroTenantId, invoices, summarizeErrors, unitdp, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -45276,9 +45823,9 @@ namespace Example
             var accessToken = "YOUR_ACCESS_TOKEN";          
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
             var unitdp = 4;
+            var idempotencyKey = "KEY_VALUE";
 
             var item = new Item();
             item.Code = "abcXYZ123";
@@ -45291,7 +45838,7 @@ namespace Example
             items._Items = itemsList;
             
             try {
-                var result = await apiInstance.UpdateOrCreateItemsAsync(accessToken, xeroTenantId, items, idempotencyKey, summarizeErrors, unitdp);
+                var result = await apiInstance.UpdateOrCreateItemsAsync(accessToken, xeroTenantId, items, summarizeErrors, unitdp, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -45487,8 +46034,8 @@ namespace Example
             var accessToken = "YOUR_ACCESS_TOKEN";          
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
+            var idempotencyKey = "KEY_VALUE";
             var dateValue = new DateTime(2020, 10, 10);
             var manualJournalLines = new List&lt;ManualJournalLine&gt;();
 
@@ -45515,7 +46062,7 @@ namespace Example
             manualJournals._ManualJournals = manualJournalsList;
             
             try {
-                var result = await apiInstance.UpdateOrCreateManualJournalsAsync(accessToken, xeroTenantId, manualJournals, idempotencyKey, summarizeErrors);
+                var result = await apiInstance.UpdateOrCreateManualJournalsAsync(accessToken, xeroTenantId, manualJournals, summarizeErrors, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -45692,8 +46239,8 @@ namespace Example
             var accessToken = "YOUR_ACCESS_TOKEN";          
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
+            var idempotencyKey = "KEY_VALUE";
             var dateValue = DateTime.Now;
 
             var contact = new Contact();
@@ -45718,7 +46265,7 @@ namespace Example
             purchaseOrders._PurchaseOrders = purchaseOrdersList;
             
             try {
-                var result = await apiInstance.UpdateOrCreatePurchaseOrdersAsync(accessToken, xeroTenantId, purchaseOrders, idempotencyKey, summarizeErrors);
+                var result = await apiInstance.UpdateOrCreatePurchaseOrdersAsync(accessToken, xeroTenantId, purchaseOrders, summarizeErrors, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -45894,8 +46441,8 @@ namespace Example
             var accessToken = "YOUR_ACCESS_TOKEN";          
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
+            var idempotencyKey = "KEY_VALUE";
             var dateValue = DateTime.Now;
 
             var contact = new Contact();
@@ -45920,7 +46467,7 @@ namespace Example
             quotes._Quotes = quotesList;
             
             try {
-                var result = await apiInstance.UpdateOrCreateQuotesAsync(accessToken, xeroTenantId, quotes, idempotencyKey, summarizeErrors);
+                var result = await apiInstance.UpdateOrCreateQuotesAsync(accessToken, xeroTenantId, quotes, summarizeErrors, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -46096,11 +46643,11 @@ namespace Example
             var accessToken = "YOUR_ACCESS_TOKEN";          
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
-            var idempotencyKey = "KEY_VALUE";
             var summarizeErrors = true;
+            var idempotencyKey = "KEY_VALUE";
             
             try {
-                var result = await apiInstance.UpdateOrCreateRepeatingInvoicesAsync(accessToken, xeroTenantId, repeatingInvoices, idempotencyKey, summarizeErrors);
+                var result = await apiInstance.UpdateOrCreateRepeatingInvoicesAsync(accessToken, xeroTenantId, repeatingInvoices, summarizeErrors, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -47096,8 +47643,8 @@ namespace Example
             var apiInstance = new AccountingApi();
             var xeroTenantId = "YOUR_XERO_TENANT_ID";
             var receiptID = Guid.Parse("00000000-0000-0000-0000-000000000000");
-            var idempotencyKey = "KEY_VALUE";
             var unitdp = 4;
+            var idempotencyKey = "KEY_VALUE";
             var dateValue = DateTime.Now;
 
             var user = new User();
@@ -47114,7 +47661,7 @@ namespace Example
             receipts._Receipts = receiptsList;
             
             try {
-                var result = await apiInstance.UpdateReceiptAsync(accessToken, xeroTenantId, receiptID, receipts, idempotencyKey, unitdp);
+                var result = await apiInstance.UpdateReceiptAsync(accessToken, xeroTenantId, receiptID, receipts, unitdp, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)

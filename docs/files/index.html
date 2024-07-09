@@ -866,6 +866,21 @@ ul.nav-tabs {
   "title" : "",
   "type" : "object",
   "properties" : {
+    "SendWithObject" : {
+      "type" : "boolean",
+      "description" : "Boolean flag to determines whether the file is sent with the document it is attached to on client facing communications. Note- The SendWithObject element is only returned when using /Associations/{ObjectId} endpoint.",
+      "example" : true
+    },
+    "Name" : {
+      "type" : "string",
+      "description" : "The name of the associated file. Note- The Name element is only returned when using /Associations/{ObjectId} endpoint.",
+      "example" : "Test.pdf"
+    },
+    "Size" : {
+      "type" : "integer",
+      "description" : "The size of the associated file in bytes. Note- The Size element is only returned when using /Associations/{ObjectId} endpoint.",
+      "example" : 12357
+    },
     "FileId" : {
       "type" : "string",
       "description" : "The unique identifier of the file",
@@ -1156,7 +1171,7 @@ ul.nav-tabs {
           <nav id="scrollingNav">
             <ul class="sidenav nav nav-list">
               <li class="nav-header" data-group="Files"><strong>SDK: </strong><span id='sdk-name'></span></li>
-              <li class="nav-header" data-group="Files"><strong>VSN: </strong>3.34.4</li>
+              <li class="nav-header" data-group="Files"><strong>VSN: </strong>7.0.0</li>
               <li class="nav-header" data-group="Files"><a href="#api-Files">Methods</a></li>
               <li data-group="Files" data-name="createFileAssociation" class="">
                 <a href="#api-Files-createFileAssociation">createFileAssociation</a>
@@ -1272,7 +1287,7 @@ namespace Example
             var idempotencyKey = "KEY_VALUE";
             
             try {
-                var result = await apiInstance.CreateFileAssociationAsync(accessToken, xeroTenantId, fileId, idempotencyKey, association);
+                var result = await apiInstance.CreateFileAssociationAsync(accessToken, xeroTenantId, fileId, association, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -1384,7 +1399,7 @@ This allows you to safely retry requests without the risk of duplicate processin
                       <th>Description</th>
                     </tr>
                     <tr>
-  <td style="width:150px;">association </td>
+  <td style="width:150px;">association <span style="color:red;">*</span></td>
   <td>
     <div class="json-schema-view">
       <div class="primitive">
@@ -1394,6 +1409,9 @@ This allows you to safely retry requests without the risk of duplicate processin
         <div class="inner description marked">
           
         </div>
+      </div>
+      <div class="inner required">
+        Required
       </div>
     </div>
     <script type="application/ld+json">
@@ -1405,7 +1423,8 @@ This allows you to safely retry requests without the risk of duplicate processin
       },
       "example" : "{ \"ObjectId\": \"1270bf7c-5d18-473a-9231-1e36c4bd33ed\", \"ObjectGroup\": \"Contact\", \"ObjectType\": \"Business\" }"
     }
-  }
+  },
+  "required" : true
 }
     </script>
                   </table>
@@ -1453,7 +1472,7 @@ namespace Example
             var idempotencyKey = "KEY_VALUE";
             
             try {
-                var result = await apiInstance.CreateFolderAsync(accessToken, xeroTenantId, idempotencyKey, folder);
+                var result = await apiInstance.CreateFolderAsync(accessToken, xeroTenantId, folder, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -1532,7 +1551,7 @@ This allows you to safely retry requests without the risk of duplicate processin
                       <th>Description</th>
                     </tr>
                     <tr>
-  <td style="width:150px;">folder </td>
+  <td style="width:150px;">folder <span style="color:red;">*</span></td>
   <td>
     <div class="json-schema-view">
       <div class="primitive">
@@ -1542,6 +1561,9 @@ This allows you to safely retry requests without the risk of duplicate processin
         <div class="inner description marked">
           
         </div>
+      </div>
+      <div class="inner required">
+        Required
       </div>
     </div>
     <script type="application/ld+json">
@@ -1553,7 +1575,8 @@ This allows you to safely retry requests without the risk of duplicate processin
       },
       "example" : "{ \"Name\": \"My Docs\" }"
     }
-  }
+  },
+  "required" : true
 }
     </script>
                   </table>
@@ -3306,7 +3329,7 @@ namespace Example
             var idempotencyKey = "KEY_VALUE";
             
             try {
-                var result = await apiInstance.UpdateFileAsync(accessToken, xeroTenantId, fileId, idempotencyKey, fileObject);
+                var result = await apiInstance.UpdateFileAsync(accessToken, xeroTenantId, fileId, fileObject, idempotencyKey);
                 Console.WriteLine(result);
             }
             catch (Exception e)
@@ -3418,7 +3441,7 @@ This allows you to safely retry requests without the risk of duplicate processin
                       <th>Description</th>
                     </tr>
                     <tr>
-  <td style="width:150px;">fileObject </td>
+  <td style="width:150px;">fileObject <span style="color:red;">*</span></td>
   <td>
     <div class="json-schema-view">
       <div class="primitive">
@@ -3428,6 +3451,9 @@ This allows you to safely retry requests without the risk of duplicate processin
         <div class="inner description marked">
           
         </div>
+      </div>
+      <div class="inner required">
+        Required
       </div>
     </div>
     <script type="application/ld+json">
@@ -3439,7 +3465,8 @@ This allows you to safely retry requests without the risk of duplicate processin
       },
       "example" : "{ \"FolderId\": \"bf924975-7097-46f2-a143-1ecfbab3c8c3\" }"
     }
-  }
+  },
+  "required" : true
 }
     </script>
                   </table>

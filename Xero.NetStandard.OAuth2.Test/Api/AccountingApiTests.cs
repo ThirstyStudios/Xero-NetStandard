@@ -148,7 +148,7 @@ namespace Xero.NetStandard.OAuth2.Test.Api.Accounting
       bankTransactions._BankTransactions = new List<BankTransaction> { new BankTransaction() };
       string idempotencyKey = AutoFaker.Generate<string>();
       bool? summarizeErrors = AutoFaker.Generate<bool?>();
-      var response = await instance.CreateBankTransactionsAsync(accessToken, xeroTenantId, bankTransactions, idempotencyKey, summarizeErrors).ConfigureAwait(false);
+      var response = await instance.CreateBankTransactionsAsync(accessToken, xeroTenantId, bankTransactions, summarizeErrors, null, idempotencyKey ).ConfigureAwait(false);
       Assert.IsType<BankTransactions>(response);
     }
 
@@ -304,7 +304,7 @@ namespace Xero.NetStandard.OAuth2.Test.Api.Accounting
       Contacts contacts = new Contacts();
       string idempotencyKey = AutoFaker.Generate<string>();
       bool? summarizeErrors = AutoFaker.Generate<bool?>();
-      var response = await instance.CreateContactsAsync(accessToken, xeroTenantId, contacts, idempotencyKey, summarizeErrors).ConfigureAwait(false);
+      var response = await instance.CreateContactsAsync(accessToken, xeroTenantId, contacts, summarizeErrors, idempotencyKey).ConfigureAwait(false);
       Assert.IsType<Contacts>(response);
     }
 
@@ -362,7 +362,7 @@ namespace Xero.NetStandard.OAuth2.Test.Api.Accounting
       CreditNotes creditNotes = new CreditNotes();
       string idempotencyKey = AutoFaker.Generate<string>();
       bool? summarizeErrors = AutoFaker.Generate<bool?>();
-      var response = await instance.CreateCreditNotesAsync(accessToken, xeroTenantId, creditNotes, idempotencyKey, summarizeErrors).ConfigureAwait(false);
+      var response = await instance.CreateCreditNotesAsync(accessToken, xeroTenantId, creditNotes, summarizeErrors, null, idempotencyKey).ConfigureAwait(false);
       Assert.IsType<CreditNotes>(response);
     }
 
@@ -465,7 +465,7 @@ namespace Xero.NetStandard.OAuth2.Test.Api.Accounting
       invoices._Invoices = invList;
       string idempotencyKey = AutoFaker.Generate<string>();
       bool? summarizeErrors = AutoFaker.Generate<bool?>();
-      var response = await instance.CreateInvoicesAsync(accessToken, xeroTenantId, invoices, idempotencyKey, summarizeErrors).ConfigureAwait(false);
+      var response = await instance.CreateInvoicesAsync(accessToken, xeroTenantId, invoices, summarizeErrors, null, idempotencyKey).ConfigureAwait(false);
       Assert.IsType<Invoices>(response);
     }
 
@@ -494,7 +494,7 @@ namespace Xero.NetStandard.OAuth2.Test.Api.Accounting
       Items items = new Items();
       string idempotencyKey = AutoFaker.Generate<string>();
       bool? summarizeErrors = AutoFaker.Generate<bool?>();
-      var response = await instance.CreateItemsAsync(accessToken, xeroTenantId, items, idempotencyKey, summarizeErrors).ConfigureAwait(false);
+      var response = await instance.CreateItemsAsync(accessToken, xeroTenantId, items, summarizeErrors, null, idempotencyKey).ConfigureAwait(false);
       Assert.IsType<Items>(response);
     }
 
@@ -689,7 +689,7 @@ namespace Xero.NetStandard.OAuth2.Test.Api.Accounting
       PurchaseOrders purchaseOrders = new PurchaseOrders();
       string idempotencyKey = AutoFaker.Generate<string>();
       bool? summarizeErrors = AutoFaker.Generate<bool?>();
-      var response = await instance.CreatePurchaseOrdersAsync(accessToken, xeroTenantId, purchaseOrders, idempotencyKey, summarizeErrors).ConfigureAwait(false);
+      var response = await instance.CreatePurchaseOrdersAsync(accessToken, xeroTenantId, purchaseOrders, summarizeErrors, idempotencyKey).ConfigureAwait(false);
       Assert.IsType<PurchaseOrders>(response);
     }
 
@@ -1070,7 +1070,7 @@ namespace Xero.NetStandard.OAuth2.Test.Api.Accounting
       int? page = AutoFaker.Generate<int?>();
       int? unitdp = AutoFaker.Generate<int?>();
       var response = await instance.GetBankTransactionsAsync(accessToken, xeroTenantId, ifModifiedSince, where, order, page, unitdp).ConfigureAwait(false);
-      Assert.IsType<BankTransactions>(response);
+      Assert.IsType<GetBankTransactionsResponse>(response);
     }
 
     /// <summary>
@@ -1360,7 +1360,7 @@ namespace Xero.NetStandard.OAuth2.Test.Api.Accounting
       int? page = AutoFaker.Generate<int?>();
       bool? includeArchived = AutoFaker.Generate<bool?>();
       var response = await instance.GetContactsAsync(accessToken, xeroTenantId, ifModifiedSince, where, order, iDs, page, includeArchived).ConfigureAwait(false);
-      Assert.IsType<Contacts>(response);
+      Assert.IsType<GetContactsResponse>(response);
     }
 
     /// <summary>
@@ -1459,7 +1459,7 @@ namespace Xero.NetStandard.OAuth2.Test.Api.Accounting
       string order = AutoFaker.Generate<string>();
       int? page = AutoFaker.Generate<int?>();
       var response = await instance.GetCreditNotesAsync(accessToken, xeroTenantId, ifModifiedSince, where, order, page).ConfigureAwait(false);
-      Assert.IsType<CreditNotes>(response);
+      Assert.IsType<GetCreditNotesResponse>(response);
     }
 
     /// <summary>
@@ -1674,7 +1674,7 @@ namespace Xero.NetStandard.OAuth2.Test.Api.Accounting
       bool? createdByMyApp = AutoFaker.Generate<bool?>();
       int? unitdp = AutoFaker.Generate<int?>();
       var response = await instance.GetInvoicesAsync(accessToken, xeroTenantId, ifModifiedSince, where, order, iDs, invoiceNumbers, contactIDs, statuses, page, includeArchived, createdByMyApp, unitdp).ConfigureAwait(false);
-      Assert.IsType<Invoices>(response);
+      Assert.IsType<GetInvoicesResponse>(response);
     }
 
     /// <summary>
@@ -1847,7 +1847,7 @@ namespace Xero.NetStandard.OAuth2.Test.Api.Accounting
       string order = AutoFaker.Generate<string>();
       int? page = AutoFaker.Generate<int?>();
       var response = await instance.GetManualJournalsAsync(accessToken, xeroTenantId, ifModifiedSince, where, order, page).ConfigureAwait(false);
-      Assert.IsType<ManualJournals>(response);
+      Assert.IsType<GetManualJournalsResponse>(response);
     }
 
     /// <summary>
@@ -1928,7 +1928,7 @@ namespace Xero.NetStandard.OAuth2.Test.Api.Accounting
       int? page = AutoFaker.Generate<int?>();
       int? unitdp = AutoFaker.Generate<int?>();
       var response = await instance.GetOverpaymentsAsync(accessToken, xeroTenantId, ifModifiedSince, where, order, page, unitdp).ConfigureAwait(false);
-      Assert.IsType<Overpayments>(response);
+      Assert.IsType<GetOverpaymentsResponse>(response);
     }
 
     /// <summary>
@@ -1981,7 +1981,7 @@ namespace Xero.NetStandard.OAuth2.Test.Api.Accounting
       string where = AutoFaker.Generate<string>();
       string order = AutoFaker.Generate<string>();
       var response = await instance.GetPaymentsAsync(accessToken, xeroTenantId, ifModifiedSince, where, order).ConfigureAwait(false);
-      Assert.IsType<Payments>(response);
+      Assert.IsType<GetPaymentsResponse>(response);
     }
 
     /// <summary>
@@ -2024,7 +2024,7 @@ namespace Xero.NetStandard.OAuth2.Test.Api.Accounting
       int? page = AutoFaker.Generate<int?>();
       int? unitdp = AutoFaker.Generate<int?>();
       var response = await instance.GetPrepaymentsAsync(accessToken, xeroTenantId, ifModifiedSince, where, order, page, unitdp).ConfigureAwait(false);
-      Assert.IsType<Prepayments>(response);
+      Assert.IsType<GetPrepaymentsResponse>(response);
     }
 
     /// <summary>
@@ -2068,7 +2068,7 @@ namespace Xero.NetStandard.OAuth2.Test.Api.Accounting
       string order = AutoFaker.Generate<string>();
       int? page = AutoFaker.Generate<int?>();
       var response = await instance.GetPurchaseOrdersAsync(accessToken, xeroTenantId, ifModifiedSince, status, dateFrom, dateTo, order, page).ConfigureAwait(false);
-      Assert.IsType<PurchaseOrders>(response);
+      Assert.IsType<GetPurchaseOrdersResponse>(response);
     }
 
     /// <summary>
@@ -2426,7 +2426,7 @@ namespace Xero.NetStandard.OAuth2.Test.Api.Accounting
       string where = AutoFaker.Generate<string>();
       string order = AutoFaker.Generate<string>();
       string taxType = AutoFaker.Generate<string>();
-      var response = await instance.GetTaxRatesAsync(accessToken, xeroTenantId, where, order, taxType).ConfigureAwait(false);
+      var response = await instance.GetTaxRatesAsync(accessToken, xeroTenantId, where, order).ConfigureAwait(false);
       Assert.IsType<TaxRates>(response);
     }
 
@@ -2742,7 +2742,7 @@ namespace Xero.NetStandard.OAuth2.Test.Api.Accounting
       BankTransactions bankTransactions = new BankTransactions();
       string idempotencyKey = AutoFaker.Generate<string>();
       bool? summarizeErrors = AutoFaker.Generate<bool?>();
-      var response = await instance.UpdateOrCreateBankTransactionsAsync(accessToken, xeroTenantId, bankTransactions, idempotencyKey, summarizeErrors).ConfigureAwait(false);
+      var response = await instance.UpdateOrCreateBankTransactionsAsync(accessToken, xeroTenantId, bankTransactions, summarizeErrors, null, idempotencyKey).ConfigureAwait(false);
       Assert.IsType<BankTransactions>(response);
     }
 
@@ -2757,7 +2757,7 @@ namespace Xero.NetStandard.OAuth2.Test.Api.Accounting
       string idempotencyKey = AutoFaker.Generate<string>();
       Contacts contacts = new Contacts();
       bool? summarizeErrors = AutoFaker.Generate<bool?>();
-      var response = await instance.UpdateOrCreateContactsAsync(accessToken, xeroTenantId, contacts, idempotencyKey, summarizeErrors).ConfigureAwait(false);
+      var response = await instance.UpdateOrCreateContactsAsync(accessToken, xeroTenantId, contacts, summarizeErrors, idempotencyKey).ConfigureAwait(false);
       Assert.IsType<Contacts>(response);
     }
 
@@ -2772,7 +2772,7 @@ namespace Xero.NetStandard.OAuth2.Test.Api.Accounting
       CreditNotes creditNotes = new CreditNotes();
       string idempotencyKey = AutoFaker.Generate<string>();
       bool? summarizeErrors = AutoFaker.Generate<bool?>();
-      var response = await instance.UpdateOrCreateCreditNotesAsync(accessToken, xeroTenantId, creditNotes, idempotencyKey, summarizeErrors).ConfigureAwait(false);
+      var response = await instance.UpdateOrCreateCreditNotesAsync(accessToken, xeroTenantId, creditNotes, summarizeErrors, null, idempotencyKey).ConfigureAwait(false);
       Assert.IsType<CreditNotes>(response);
     }
 
@@ -2787,7 +2787,7 @@ namespace Xero.NetStandard.OAuth2.Test.Api.Accounting
       Invoices invoices = new Invoices();
       string idempotencyKey = AutoFaker.Generate<string>();
       bool? summarizeErrors = AutoFaker.Generate<bool?>();
-      var response = await instance.UpdateOrCreateInvoicesAsync(accessToken, xeroTenantId, invoices, idempotencyKey, summarizeErrors).ConfigureAwait(false);
+      var response = await instance.UpdateOrCreateInvoicesAsync(accessToken, xeroTenantId, invoices, summarizeErrors, null, idempotencyKey).ConfigureAwait(false);
       Assert.IsType<Invoices>(response);
     }
 
@@ -2802,7 +2802,7 @@ namespace Xero.NetStandard.OAuth2.Test.Api.Accounting
       Items items = new Items();
       string idempotencyKey = AutoFaker.Generate<string>();
       bool? summarizeErrors = AutoFaker.Generate<bool?>();
-      var response = await instance.UpdateOrCreateItemsAsync(accessToken, xeroTenantId, items, idempotencyKey, summarizeErrors).ConfigureAwait(false);
+      var response = await instance.UpdateOrCreateItemsAsync(accessToken, xeroTenantId, items, summarizeErrors, null, idempotencyKey).ConfigureAwait(false);
       Assert.IsType<Items>(response);
     }
 
@@ -2817,7 +2817,7 @@ namespace Xero.NetStandard.OAuth2.Test.Api.Accounting
       PurchaseOrders purchaseOrders = new PurchaseOrders();
       string idempotencyKey = AutoFaker.Generate<string>();
       bool? summarizeErrors = AutoFaker.Generate<bool?>();
-      var response = await instance.UpdateOrCreatePurchaseOrdersAsync(accessToken, xeroTenantId, purchaseOrders, idempotencyKey, summarizeErrors).ConfigureAwait(false);
+      var response = await instance.UpdateOrCreatePurchaseOrdersAsync(accessToken, xeroTenantId, purchaseOrders, summarizeErrors, idempotencyKey).ConfigureAwait(false);
       Assert.IsType<PurchaseOrders>(response);
     }
 
