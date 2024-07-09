@@ -24,6 +24,7 @@ using RestSharp.Serializers;
 using RestSharpMethod = RestSharp.Method;
 using RestSharp.Serializers.Xml;
 using System.Threading;
+using System.Net.Http;
 
 [assembly: System.Runtime.CompilerServices.InternalsVisibleToAttribute("Xero.NetStandard.OAuth2.Test")]
 namespace Xero.NetStandard.OAuth2.Client
@@ -240,6 +241,7 @@ namespace Xero.NetStandard.OAuth2.Client
     public partial class ApiClient : ISynchronousClient, IAsynchronousClient
     {
         private readonly String _baseUrl;
+        private RestClient _restClient;
 
         /// <summary>
         /// Allows for extending request processing for <see cref="ApiClient"/> generated code.
@@ -279,6 +281,23 @@ namespace Xero.NetStandard.OAuth2.Client
                 throw new ArgumentException("basePath cannot be empty");
 
             _baseUrl = basePath;
+
+            Configuration config = new Xero.NetStandard.OAuth2.Client.Configuration { BasePath = _baseUrl };
+            _restClient = new RestClient(
+                                        new RestClientOptions(config.BasePath.TrimEnd('/'))
+                                        {
+                                            MaxTimeout = config.Timeout,
+                                            ThrowOnAnyError = true,
+                                            UserAgent = config.UserAgent ?? null,
+                                            ConfigureMessageHandler = _ => new HttpClientHandler { MaxConnectionsPerServer = 128 }
+                                        },
+                                        configureSerialization: cs => cs.UseSerializer(() =>
+                                        {
+                                            var serializer = new CustomJsonCodec(config);
+                                            return serializer;
+                                        })
+                                        .UseSerializer<XmlRestSerializer>(), useClientFactory: true
+                                    );
         }
 
         /// <summary>
@@ -499,24 +518,7 @@ namespace Xero.NetStandard.OAuth2.Client
 
         private async Task<ApiResponse<T>> Exec<T>(RestRequest req, IReadableConfiguration configuration, CancellationToken cancellationToken = default)
         {
-            RestClientOptions clientOptions = new RestClientOptions(_baseUrl)
-            {
-                MaxTimeout = configuration.Timeout
-            };
-            if (configuration.UserAgent != null)
-            {
-                clientOptions.UserAgent = configuration.UserAgent;
-            }
-
-            RestClient client = new RestClient(
-                clientOptions,
-                configureSerialization: _ => _.UseSerializer(() =>
-                {
-                    var serializer = new CustomJsonCodec(configuration);
-                    return serializer;
-                })
-                    .UseSerializer<XmlRestSerializer>()
-            );
+            //https://stackoverflow.com/questions/49588205/should-restclient-be-singleton-or-create-new-instance-for-every-requests
 
             if (configuration.Cookies != null && configuration.Cookies.Count > 0)
             {
@@ -527,7 +529,7 @@ namespace Xero.NetStandard.OAuth2.Client
             }
 
             InterceptRequest(req);
-            var response = await client.ExecuteAsync<T>(req, cancellationToken);
+            var response = await _restClient.ExecuteAsync<T>(req, cancellationToken);
             InterceptResponse(req, response);
 
             var result = toApiResponse(response);
