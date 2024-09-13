@@ -25,30 +25,35 @@ using OpenAPIDateConverter = Xero.NetStandard.OAuth2.Client.OpenAPIDateConverter
 namespace Xero.NetStandard.OAuth2.Model.Accounting
 {
     /// <summary>
-    /// Overpayments
+    /// Pagination
     /// </summary>
     [DataContract]
-    public partial class Overpayments :  IEquatable<Overpayments>, IValidatableObject
+    public partial class Pagination :  IEquatable<Pagination>, IValidatableObject
     {
         
         /// <summary>
-        /// Gets or Sets Pagination
+        /// Gets or Sets Page
         /// </summary>
-        [DataMember(Name="pagination", EmitDefaultValue=false)]
-        public Pagination Pagination { get; set; }
+        [DataMember(Name="page", EmitDefaultValue=false)]
+        public int? Page { get; set; }
 
         /// <summary>
-        /// Displays array of warning messages from the API
+        /// Gets or Sets PageSize
         /// </summary>
-        /// <value>Displays array of warning messages from the API</value>
-        [DataMember(Name="Warnings", EmitDefaultValue=false)]
-        public List<ValidationError> Warnings { get; set; }
+        [DataMember(Name="pageSize", EmitDefaultValue=false)]
+        public int? PageSize { get; set; }
 
         /// <summary>
-        /// Gets or Sets _Overpayments
+        /// Gets or Sets PageCount
         /// </summary>
-        [DataMember(Name="Overpayments", EmitDefaultValue=false)]
-        public List<Overpayment> _Overpayments { get; set; }
+        [DataMember(Name="pageCount", EmitDefaultValue=false)]
+        public int? PageCount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ItemCount
+        /// </summary>
+        [DataMember(Name="itemCount", EmitDefaultValue=false)]
+        public int? ItemCount { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -57,10 +62,11 @@ namespace Xero.NetStandard.OAuth2.Model.Accounting
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Overpayments {\n");
-            sb.Append("  Pagination: ").Append(Pagination).Append("\n");
-            sb.Append("  Warnings: ").Append(Warnings).Append("\n");
-            sb.Append("  _Overpayments: ").Append(_Overpayments).Append("\n");
+            sb.Append("class Pagination {\n");
+            sb.Append("  Page: ").Append(Page).Append("\n");
+            sb.Append("  PageSize: ").Append(PageSize).Append("\n");
+            sb.Append("  PageCount: ").Append(PageCount).Append("\n");
+            sb.Append("  ItemCount: ").Append(ItemCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,36 +87,39 @@ namespace Xero.NetStandard.OAuth2.Model.Accounting
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Overpayments);
+            return this.Equals(input as Pagination);
         }
 
         /// <summary>
-        /// Returns true if Overpayments instances are equal
+        /// Returns true if Pagination instances are equal
         /// </summary>
-        /// <param name="input">Instance of Overpayments to be compared</param>
+        /// <param name="input">Instance of Pagination to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Overpayments input)
+        public bool Equals(Pagination input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Pagination == input.Pagination ||
-                    (this.Pagination != null &&
-                    this.Pagination.Equals(input.Pagination))
+                    this.Page == input.Page ||
+                    (this.Page != null &&
+                    this.Page.Equals(input.Page))
                 ) && 
                 (
-                    this.Warnings == input.Warnings ||
-                    this.Warnings != null &&
-                    input.Warnings != null &&
-                    this.Warnings.SequenceEqual(input.Warnings)
+                    this.PageSize == input.PageSize ||
+                    (this.PageSize != null &&
+                    this.PageSize.Equals(input.PageSize))
                 ) && 
                 (
-                    this._Overpayments == input._Overpayments ||
-                    this._Overpayments != null &&
-                    input._Overpayments != null &&
-                    this._Overpayments.SequenceEqual(input._Overpayments)
+                    this.PageCount == input.PageCount ||
+                    (this.PageCount != null &&
+                    this.PageCount.Equals(input.PageCount))
+                ) && 
+                (
+                    this.ItemCount == input.ItemCount ||
+                    (this.ItemCount != null &&
+                    this.ItemCount.Equals(input.ItemCount))
                 );
         }
 
@@ -123,12 +132,14 @@ namespace Xero.NetStandard.OAuth2.Model.Accounting
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Pagination != null)
-                    hashCode = hashCode * 59 + this.Pagination.GetHashCode();
-                if (this.Warnings != null)
-                    hashCode = hashCode * 59 + this.Warnings.GetHashCode();
-                if (this._Overpayments != null)
-                    hashCode = hashCode * 59 + this._Overpayments.GetHashCode();
+                if (this.Page != null)
+                    hashCode = hashCode * 59 + this.Page.GetHashCode();
+                if (this.PageSize != null)
+                    hashCode = hashCode * 59 + this.PageSize.GetHashCode();
+                if (this.PageCount != null)
+                    hashCode = hashCode * 59 + this.PageCount.GetHashCode();
+                if (this.ItemCount != null)
+                    hashCode = hashCode * 59 + this.ItemCount.GetHashCode();
                 return hashCode;
             }
         }
