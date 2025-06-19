@@ -149,7 +149,19 @@ namespace Xero.NetStandard.OAuth2.Model.PayrollNz
             /// Very strange one - Enum Visits to shop value: Visitstoshop
             /// </summary>
             [EnumMember(Value = "Visits to shop")]
-            Visitstoshop = 8
+            Visitstoshop = 8,
+
+            /// <summary>
+            /// Another weird one, probably a result of legacy data?
+            /// </summary>
+            [EnumMember(Value = "Daily")]
+            Daily = 9,
+
+            /// <summary>
+            /// Another weird one, probably a result of legacy data?
+            /// </summary>
+            [EnumMember(Value = "Per Km")]
+            PerKm = 10
 
 
         }
