@@ -161,7 +161,13 @@ namespace Xero.NetStandard.OAuth2.Model.PayrollNz
             /// Another weird one, probably a result of legacy data?
             /// </summary>
             [EnumMember(Value = "Per Km")]
-            PerKm = 10
+            PerKm = 10,
+
+            /// <summary>
+            /// Another weird one, probably a result of legacy data?
+            /// </summary>
+            [EnumMember(Value = "Kms")]
+            Kms = 11            
 
 
         }
